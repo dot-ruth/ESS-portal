@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.con1{
+    margin: 1rem 3rem;
+    .field{
+        margin: 1rem 0;
+        padding: 1rem 0;
+    }
+    .hund{
+        margin-left: 5rem;
+        width: 75%;
+    }
+    .con{
+        margin: .5rem 0;
+        display: flex;
+        .con-item{
+            margin-left: 5rem;
+            width: 25%;
+        }
+    }
+}

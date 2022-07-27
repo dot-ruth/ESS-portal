@@ -1,0 +1,93 @@
+
+  <!---->
+  <div class="con mat-app-background" >
+    <div class="con-left">
+<form action="" >
+        <div class="con1">
+            <div class="con1-item" id="s">
+         <mat-form-field appearance="fill" class="emp" >
+            <mat-label>Selected Employee: </mat-label>
+            <mat-select>
+              <mat-option value="1"></mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div class="con1-item">
+         <mat-form-field appearance="fill" >
+            <mat-label>Status:</mat-label>
+            <mat-select>
+              <mat-option value="1">Active</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    </div>
+    <div class="con2">
+        <div class="con2-item">
+        <mat-form-field appearance="fill">
+            <mat-label>Employee ID</mat-label>
+            <input matInput>
+          </mat-form-field>
+    </div>
+        <div class="con2-item" id="f">
+         <mat-form-field appearance="fill" id="honor">
+            <mat-label> honorific:</mat-label>
+            <mat-select>
+              <mat-option value="1">Mr</mat-option>
+              <mat-option value="2">Mrs</mat-option>
+              <mat-option value="3">Miss</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <mat-form-field appearance="fill" class="emp">
+            <mat-label>Full Name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+    </div>
+    <div class="con3">
+        <div class="con3-item">
+       <mat-form-field appearance="fill" >
+            <mat-label> Sex: </mat-label>
+            <mat-select>
+              <mat-option value="1">Male</mat-option>
+              <mat-option value="1">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div class="con3-item">
+       <mat-form-field  appearance="fill">
+            <mat-label> Date of Birth (Grg)</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+          
+    </div>
+        <div class="con3-item">
+         <mat-form-field  appearance="fill">
+        <mat-label>Date of Birth (Eth)</mat-label>
+        <input matInput [matDatepicker]="pick">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pick"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #pick></mat-datepicker>
+    </mat-form-field>
+    </div>
+    <div class="con3-item">
+        <mat-form-field appearance="fill" >
+            <mat-label> current Status:</mat-label>
+            <mat-select>
+              <mat-option value="1">Active</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+        
+    </div>
+</form>
+</div>
+<div class="con-right">
+    <fieldset class="img">
+        <legend> Photo</legend>
+    <input type="image" src="" alt="">
+    </fieldset>
+</div>
+</div>
