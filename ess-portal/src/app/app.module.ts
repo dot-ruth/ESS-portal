@@ -13,18 +13,24 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { EmploymentComponent } from './employment/employment.component';
-import { PersonalComponent } from './personal/personal.component';
-import { TopButtonComponent } from './top-button/top-button.component';
+import { SharedService } from './shared.service';
+import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { EssComponent } from './ess/ess.component';
+import { EmploymentComponent } from './ess/employment/employment.component';
+import { HeaderComponent } from './ess/header/header.component';
+import { PersonalComponent } from './ess/personal/personal.component';
+import { TopButtonComponent } from './ess/top-button/top-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    LoginComponent,
+    EssComponent,
     EmploymentComponent,
+    HeaderComponent ,
     PersonalComponent,
-    TopButtonComponent
+    TopButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +47,9 @@ import { TopButtonComponent } from './top-button/top-button.component';
     MatSelectModule,
     MatToolbarModule,
     MatTabsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

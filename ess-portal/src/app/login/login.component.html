@@ -1,0 +1,13 @@
+
+<form action="" #form="ngForm" (submit)="onSubmit(form)">
+    <mat-form-field appearance="fill" >
+        <mat-label>Full Name</mat-label>
+        <input matInput [(ngModel)]="fullname" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field appearance="fill" >
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <div *ngIf="err">Please Check the entered Credintials</div>
+    <button mat-raised-button color="primary" >Login</button>
+</form>
