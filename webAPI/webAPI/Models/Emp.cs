@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace webAPI.Models
 {
     public partial class Emp
     {
+        [Key]
         public string? EmployeeId { get; set; }
         public string? FullName { get; set; }
         public string? ReportsTo { get; set; }

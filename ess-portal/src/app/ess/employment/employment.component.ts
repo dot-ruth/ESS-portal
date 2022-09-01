@@ -12,7 +12,7 @@ export class EmploymentComponent implements OnInit {
   Active:string = ""
   pass:string =""
   reportsTo:string = ""
-  doeEth:string = " "
+  doeEth:string = ""
   doe:string = " "
   tinNo:string = " "
   pfPenNo:string = " "
@@ -38,6 +38,11 @@ export class EmploymentComponent implements OnInit {
   emptypelist:any = []
   professionlist:any = [ ]
   dutylist:any = [ ]
+  deptlist:any = []
+  jobPositionlist:any = []
+  gradeList:any = []
+  scaleList:any = []
+  reportstoList:any =[]
 
   ngOnInit(): void {
     this.Notassigned = "N/A"
@@ -54,11 +59,11 @@ export class EmploymentComponent implements OnInit {
       this.fieldofstudy = this.datalist[0].fieldOfStudy;
       this.reportsTo = this.datalist[0].reportsTo;
       this.doe= this.datalist[0].doe;
-      this.doeEth = this.datalist[0].doeEth;
+      this.doeEth = this.datalist[0].doeEth ;
       this.tinNo = this.datalist[0].tinNo;
       this.pfPenNo = this.datalist[0].pfPenNo;
       this.pfScheme = this.datalist[0].penPfSchem;
-      this.jobposition = this.datalist.jobPosition;
+      this.jobposition = this.datalist[0].jobPosition;
       this.grade = this.datalist[0].grade;
       this.scale = this.datalist[0].scale;
       this.basicSalary = this.datalist[0].basicSalary;
@@ -69,9 +74,7 @@ export class EmploymentComponent implements OnInit {
       this.contStartDateEth = this.datalist[0].contStartDateEth;
       this.contEndDate = this.datalist[0].contEndDate;
       this.contEndDateEth = this.datalist[0].contEndDateEth;
-      console.log(this.doeEth)
       
-     
     })
     this.service.getEmptype().subscribe((data)=>{
       this.emptypelist =data
@@ -81,6 +84,18 @@ export class EmploymentComponent implements OnInit {
     })
     this.service.duty_station().subscribe((data)=>{
 this.dutylist=data
+    })
+    this.service.getDept().subscribe((data)=>{
+this.deptlist=data
+    })
+    this.service.getjob_pos().subscribe((data)=>{
+      this.jobPositionlist=data
+    })
+    this.service.getgrade().subscribe((data)=>{
+      this.gradeList=data
+    })
+    this.service.getreportsTO().subscribe((data)=>{
+      this.reportstoList=data
     })
   }
 }

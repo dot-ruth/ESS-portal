@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using webAPI.Models;
 
 namespace webAPI.Controllers
@@ -113,5 +114,34 @@ namespace webAPI.Controllers
             }).ToArray().ToHashSet();
         }
 
+        [Route("sex")]
+        [HttpGet]
+        public dynamic getsex()
+        {
+            return context.Emps.Select(x => new
+            {
+                x.Sex
+            }).ToArray().ToHashSet();
+        }
+
+        [Route("reportsto")]
+        [HttpGet]
+        public dynamic getreportsto()
+        {
+            return context.Emps.Select(x => new
+            {
+                x.ReportsTo
+            }).ToArray().ToHashSet();
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<List<Emp>>> Update(Emp req)
+        {
+            var emp = await context.Emps.FindAsync(req.EmployeeId);
+            if (emp == null) return BadRequest("Employee not Found");
+            emp.FullName = req.FullName;
+            await context.SaveChangesAsync();
+            return Ok(await context.Emps.FindAsync(req.EmployeeId));
+        }
     }
 }

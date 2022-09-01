@@ -56,4 +56,12 @@ export class SharedService {
   getgrade():Observable<any[]>{
     return this.http.get<any[]>(this.APIurl + '/getgrade');
   }
+
+  getSex():Observable<any[]>{
+    return this.http.get<any[]>(this.APIurl + '/sex');
+  }
+
+  getreportsTO():Observable<any[]>{
+    return this.http.get<any[]>(this.APIurl + '/reportsto');
+  }
 }

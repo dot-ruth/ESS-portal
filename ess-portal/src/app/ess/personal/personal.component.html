@@ -11,9 +11,7 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="con-item">
         <mat-label> Ethinic Group</mat-label>
-        <mat-select>
-          <mat-option value="1"></mat-option>
-        </mat-select>
+        <input matInput>
       </mat-form-field>
     <mat-form-field appearance="fill"class="con-item">
         <mat-label>Religion</mat-label>
@@ -52,42 +50,42 @@
         <div class="con">
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>Town</mat-label>
-            <input matInput>
+            <input matInput [value]="city">
         </mat-form-field>
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>Sub city</mat-label>
-            <input matInput>
+            <input matInput [value]="subcity">
         </mat-form-field>
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>Woreda</mat-label>
-            <input matInput>
+            <input matInput [value]="woreda">
         </mat-form-field>
     </div>
     <div class="con">
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>Kebele</mat-label>
-            <input matInput>
+            <input matInput [value]="Notassigned">
         </mat-form-field>
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>House No.</mat-label>
-            <input matInput>
+            <input matInput [value]="houseNo">
         </mat-form-field>
     </div>
     <div class="con">
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>Telephone(Cell No.)</mat-label>
             <span matPrefix>+251 &nbsp;</span>
-            <input matInput>
+            <input matInput [value]="celNo">
         </mat-form-field>
         <mat-form-field appearance="fill"class="con-item">
             <mat-label>Alt.Telephone</mat-label>
             <span matPrefix>+251 &nbsp;</span>
-            <input matInput>
+            <input matInput [value]="telNo">
         </mat-form-field>
     </div>
         <mat-form-field appearance="fill" class="hund con-item" >
             <mat-label>Email Address</mat-label>
-            <input type="email"  matInput>
+            <input type="email"  matInput [value]="Notassigned">
         </mat-form-field>
     </fieldset>
     <fieldset class="field">

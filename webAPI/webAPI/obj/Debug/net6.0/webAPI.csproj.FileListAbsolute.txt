@@ -66,3 +66,7 @@ C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\obj\Debug\net6.0\refint\webAPI.
 C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\obj\Debug\net6.0\webAPI.pdb
 C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\obj\Debug\net6.0\webAPI.genruntimeconfig.cache
 C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\obj\Debug\net6.0\ref\webAPI.dll
+C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ruth\Documents\ESS-portal\webAPI\webAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

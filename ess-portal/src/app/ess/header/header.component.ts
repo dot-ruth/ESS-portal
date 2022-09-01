@@ -23,11 +23,11 @@ export class HeaderComponent implements OnInit {
 
   datalist:any = []
   honorificlist:any = []
+  sexList : any =[]
 
 //datalist:any =[ ]
   ngOnInit(): void {
-    this.Active= "Active"
-   this.s=""
+  this.Active= "Active"
    this.loadData();
   }
   loadData(){
@@ -44,6 +44,9 @@ export class HeaderComponent implements OnInit {
     })
     this.service.gethonorific().subscribe((data)=>{
       this.honorificlist=data;
+         })
+         this.service.getSex().subscribe((data)=>{
+          this.sexList=data
          })
   }
   

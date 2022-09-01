@@ -86,7 +86,7 @@
          <div class="con2-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Res.Permit Start(Grg)</mat-label>
-                 <input matInput [matDatepicker]="P" [value]="Notassigned">
+                 <input matInput  [value]="Notassigned">
                  <mat-datepicker-toggle matSuffix [for]="P"></mat-datepicker-toggle>
                  <mat-datepicker touchUi #P></mat-datepicker>
              </mat-form-field>
@@ -94,7 +94,7 @@
          <div class="con2-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Res.Permit End (Grg)</mat-label>
-                 <input matInput [matDatepicker]="P_e" [value]="Notassigned">
+                 <input matInput  [value]="Notassigned">
                  <mat-datepicker-toggle matSuffix [for]="P_e"></mat-datepicker-toggle>
                  <mat-datepicker touchUi #P_e></mat-datepicker>
              </mat-form-field>
@@ -120,15 +120,15 @@
             <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> Date of Emp't (Eth)</mat-label>
-                     <input matInput [matDatepicker]="E_e" [(ngModel)]="doeEth" [ngModelOptions]="{standalone: true}">
-                     <mat-datepicker-toggle matSuffix [for]="E_e"></mat-datepicker-toggle>
-                     <mat-datepicker touchUi #E_e></mat-datepicker>
+                     <input matInput [(ngModel)]="doeEth" [ngModelOptions]="{standalone: true}">
+                     <mat-datepicker-toggle matSuffix [for]="Ee"></mat-datepicker-toggle>
+                     <mat-datepicker touchUi #Ee></mat-datepicker>
                  </mat-form-field>
              </div>
              <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> Contract Start (Eth)</mat-label>
-                     <input matInput [matDatepicker]="Ce" [(ngModel)]="contStartDateEth" [ngModelOptions]="{standalone: true}">
+                     <input matInput  [(ngModel)]="contStartDateEth" [ngModelOptions]="{standalone: true}">
                      <mat-datepicker-toggle matSuffix [for]="Ce"></mat-datepicker-toggle>
                      <mat-datepicker touchUi #Ce></mat-datepicker>
                  </mat-form-field>
@@ -136,7 +136,7 @@
              <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> Contract End(Eth)</mat-label>
-                     <input matInput [matDatepicker]="C_e_e" [(ngModel)]="contEndDateEth" [ngModelOptions]="{standalone: true}">
+                     <input matInput  [(ngModel)]="contEndDateEth" [ngModelOptions]="{standalone: true}">
                      <mat-datepicker-toggle matSuffix [for]="C_e_e"></mat-datepicker-toggle>
                      <mat-datepicker touchUi #C_e_e></mat-datepicker>
                  </mat-form-field>
@@ -144,7 +144,7 @@
              <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> Res.Permit Start(Eth)</mat-label>
-                     <input matInput [matDatepicker]="Pe" [value]="Notassigned">
+                     <input matInput  [value]="Notassigned">
                      <mat-datepicker-toggle matSuffix [for]="Pe"></mat-datepicker-toggle>
                      <mat-datepicker touchUi #Pe></mat-datepicker>
                  </mat-form-field>
@@ -152,7 +152,7 @@
              <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> Res.Permit End (Eth)</mat-label>
-                     <input matInput [matDatepicker]="P_e_e"[value]="Notassigned">
+                     <input matInput [value]="Notassigned">
                      <mat-datepicker-toggle matSuffix [for]="P_e_e"></mat-datepicker-toggle>
                      <mat-datepicker touchUi #P_e_e></mat-datepicker>
                  </mat-form-field>
@@ -160,7 +160,7 @@
              <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> ALCS Date (Eth)</mat-label>
-                     <input matInput [matDatepicker]="a_e"[(ngModel)]="alscEth" [ngModelOptions]="{standalone: true}">
+                     <input matInput [(ngModel)]="alscEth" [ngModelOptions]="{standalone: true}">
                      <mat-datepicker-toggle matSuffix [for]="a_e"></mat-datepicker-toggle>
                      <mat-datepicker touchUi #a_e></mat-datepicker>
                  </mat-form-field>
@@ -168,7 +168,7 @@
              <div class="con3-item">
                 <mat-form-field  appearance="fill" class="select">
                      <mat-label> Permanent Since (Eth)</mat-label>
-                     <input matInput [matDatepicker]="ps_e"[value]="Notassigned">
+                     <input matInput [value]="Notassigned">
                      <mat-datepicker-toggle matSuffix [for]="ps_e"></mat-datepicker-toggle>
                      <mat-datepicker touchUi #ps_e></mat-datepicker>
                  </mat-form-field>
@@ -186,7 +186,7 @@
 <div class="flex2-item">
     <mat-form-field  appearance="fill" class="select" id="bouns">
          <mat-label>Bouns Payment On</mat-label>
-         <input matInput [matDatepicker]="Bouns" [value]="Notassigned">
+         <input matInput  [value]="Notassigned">
          <mat-datepicker-toggle matSuffix [for]="Bouns"></mat-datepicker-toggle>
          <mat-datepicker touchUi #Bouns></mat-datepicker>
      </mat-form-field>
@@ -199,16 +199,16 @@ Budget Center/Location <hr>
     <div class="flex1-item">
         <mat-form-field appearance="fill"  class="select">
             <mat-label>Department</mat-label>
-            <mat-select>
-              <mat-option value="1"></mat-option>
+            <mat-select [(ngModel)]="deptL1" [ngModelOptions]="{standalone: true}">
+              <mat-option *ngFor="let dept of deptlist" [value]="dept.deptL1">{{dept.deptL1}}</mat-option>
             </mat-select>
           </mat-form-field>
      </div>
     <div class="flex2-item">
         <mat-form-field appearance="fill"  class="select">
             <mat-label>Shift</mat-label>
-            <mat-select>
-              <mat-option value="1"></mat-option>
+            <mat-select [value]="Notassigned">
+              <mat-option [value]="Notassigned">N/A</mat-option>
             </mat-select>
           </mat-form-field>
      </div>
@@ -220,16 +220,16 @@ Budget Center/Location <hr>
             <div class="flex1-item">
                 <mat-form-field appearance="fill"  class="select">
                     <mat-label>Job Position</mat-label>
-                    <mat-select>
-                      <mat-option value="1"></mat-option>
+                    <mat-select [(ngModel)]="jobposition" [ngModelOptions]="{standalone: true}">
+                      <mat-option *ngFor="let job of jobPositionlist" [value]="job.jobPosition">{{job.jobPosition}}</mat-option>
                     </mat-select>
                   </mat-form-field>
              </div>
             <div class="flex2-item">
                 <mat-form-field appearance="fill"  class="select">
                     <mat-label>Grade</mat-label>
-                    <mat-select>
-                      <mat-option value="1"></mat-option>
+                    <mat-select [(ngModel)]="grade" [ngModelOptions]="{standalone: true}">
+                      <mat-option *ngFor="let grade of gradeList" [value]="grade.grade">{{grade.grade}}</mat-option>
                     </mat-select>
                   </mat-form-field>
              </div>
@@ -238,19 +238,19 @@ Budget Center/Location <hr>
                 <div class="con_1">
                     <mat-form-field appearance="fill" class="emp">
                         <mat-label>Scale</mat-label>
-                        <input matInput>
+                        <input matInput [(ngModel)]="scale" [ngModelOptions]="{standalone: true}">
                       </mat-form-field>
                 </div>
                 <div class="con_2">
                     <mat-form-field appearance="fill" class="emp">
                         <mat-label>Basic Salary</mat-label>
-                        <input matInput>
+                        <input matInput [(ngModel)]="basicSalary" [ngModelOptions]="{standalone: true}">
                       </mat-form-field>
                 </div>
                 <div class="con_3">
                     <mat-form-field appearance="fill" class="emp">
                         <mat-label>Adjusted Salary</mat-label>
-                        <input matInput>
+                        <input matInput [value]="Notassigned">
                       </mat-form-field>
                 </div>
             </div>
@@ -258,16 +258,16 @@ Budget Center/Location <hr>
                 <div class="flex1-item">
                     <mat-form-field appearance="fill"  class="select">
                         <mat-label>Reports to</mat-label>
-                        <mat-select>
-                          <mat-option value="1"></mat-option>
+                        <mat-select [(ngModel)]="reportsTo" [ngModelOptions]="{standalone: true}">
+                          <mat-option *ngFor="let reports of reportstoList" [value]="reports.reportsTo">{{reports.reportsTo}}</mat-option>
                         </mat-select>
                       </mat-form-field>
                  </div>
                 <div class="flex2-item">
                     <mat-form-field appearance="fill"  class="select">
                         <mat-label>Annual Leave Type</mat-label>
-                        <mat-select>
-                          <mat-option value="1"></mat-option>
+                        <mat-select [value]="Notassigned">
+                          <mat-option [value]="Notassigned">N/A</mat-option>
                         </mat-select>
                       </mat-form-field>
                  </div>
@@ -276,19 +276,19 @@ Budget Center/Location <hr>
                     <div class="con_1">
                         <mat-form-field appearance="fill" class="emp">
                             <mat-label>Classification id No</mat-label>
-                            <input matInput>
+                            <input matInput [value]="Notassigned">
                           </mat-form-field>
                     </div>
                     <div class="con_2">
                         <mat-form-field appearance="fill" class="emp">
                             <mat-label>Tin</mat-label>
-                            <input matInput>
+                            <input matInput [value]="tinNo">
                           </mat-form-field>
                     </div>
                     <div class="con_3">
                         <mat-form-field appearance="fill" class="emp">
                             <mat-label>Pension/PF Number</mat-label>
-                            <input matInput>
+                            <input matInput [value]="pfPenNo">
                           </mat-form-field>
                     </div>
                 </div>
@@ -296,27 +296,27 @@ Budget Center/Location <hr>
                     <div class="con_1">
                         <mat-form-field appearance="fill" class="emp">
                             <mat-label>Emp.File Number</mat-label>
-                            <input matInput>
+                            <input matInput [value]="Notassigned">
                           </mat-form-field>
                     </div>
                     <div class="con_2">
                         <mat-form-field appearance="fill" class="emp">
                             <mat-label>Company id Card No</mat-label>
-                            <input matInput>
+                            <input matInput [value]="Notassigned">
                           </mat-form-field>
                     </div>
                     <div class="con_3">
                         <mat-form-field appearance="fill" class="emp">
                             <mat-label>TA Clock in ID</mat-label>
-                            <input matInput>
+                            <input matInput [value]="Notassigned">
                           </mat-form-field>
                     </div>
                 </div>
                 <div class="grid">
                 <mat-form-field appearance="fill"  class="select">
                     <mat-label>TA Machine</mat-label>
-                    <mat-select>
-                      <mat-option value="1"></mat-option>
+                    <mat-select [value]="Notassigned">
+                      <mat-option [value]="Notassigned">N/A</mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
