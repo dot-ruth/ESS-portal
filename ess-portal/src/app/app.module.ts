@@ -9,6 +9,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';  
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +25,7 @@ import { HeaderComponent } from './ess/header/header.component';
 import { PersonalComponent } from './ess/personal/personal.component';
 import { TopButtonComponent } from './ess/top-button/top-button.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,8 @@ import { TopButtonComponent } from './ess/top-button/top-button.component';
     HeaderComponent ,
     PersonalComponent,
     TopButtonComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import { TopButtonComponent } from './ess/top-button/top-button.component';
     MatSelectModule,
     MatToolbarModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    CommonModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+.con{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin:3rem auto ;
+    .btn{
+        width: 50%;
+        margin: 1rem auto;
+    }
+}

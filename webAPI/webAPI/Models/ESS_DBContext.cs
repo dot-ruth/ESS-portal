@@ -31,7 +31,7 @@ namespace webAPI.Models
         {
             modelBuilder.Entity<Emp>(entity =>
             {
-                entity.HasNoKey();
+                //entity.HasNoKey();
 
                 entity.ToTable("emp");
 
@@ -78,7 +78,7 @@ namespace webAPI.Models
                     .HasColumnName("CAWoreda");
 
                 entity.Property(e => e.Cgpa)
-                    .HasMaxLength(5)
+                    .HasMaxLength(15)
                     .IsUnicode(false)
                     .HasColumnName("CGPA");
 

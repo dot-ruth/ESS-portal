@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentNHibernate.Automapping;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using webAPI.Migrations;
 using webAPI.Models;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace webAPI.Controllers
 {
@@ -11,10 +13,13 @@ namespace webAPI.Controllers
     public class empController : ControllerBase
     {
         private readonly ESS_DBContext context;
+        private readonly IHostingEnvironment env;
+        
 
-        public empController(ESS_DBContext context)
+        public empController(ESS_DBContext context, IHostingEnvironment _environment)
         {
             this.context = context;
+            this.env = _environment;
         }
 
         
@@ -135,13 +140,14 @@ namespace webAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<List<Emp>>> Update(Emp req)
+        public async Task<ActionResult<List<Emp>>> Updateemp(string id,Emp req)
         {
-            var emp = await context.Emps.FindAsync(req.EmployeeId);
-            if (emp == null) return BadRequest("Employee not Found");
-            emp.FullName = req.FullName;
+            var employee = await context.Emps.FindAsync(id);
+            employee.FullName = req.FullName;
             await context.SaveChangesAsync();
-            return Ok(await context.Emps.FindAsync(req.EmployeeId));
+            return Ok(employee);
         }
+
+
     }
 }

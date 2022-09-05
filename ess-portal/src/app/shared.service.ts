@@ -64,4 +64,9 @@ export class SharedService {
   getreportsTO():Observable<any[]>{
     return this.http.get<any[]>(this.APIurl + '/reportsto');
   }
+
+  update(val:any){
+    return this.http.put(this.APIurl,val);
+  }
+  
 }

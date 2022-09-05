@@ -1,5 +1,6 @@
 
 <form action="" #form="ngForm" (submit)="onSubmit(form)">
+    <div class="con">
     <mat-form-field appearance="fill" >
         <mat-label>Full Name</mat-label>
         <input matInput [(ngModel)]="fullname" [ngModelOptions]="{standalone: true}">
@@ -9,5 +10,7 @@
         <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <div *ngIf="err">Please Check the entered Credintials</div>
-    <button mat-raised-button color="primary" >Login</button>
+    <button mat-raised-button color="primary"  class="btn">Login</button>
+</div>
 </form>
+

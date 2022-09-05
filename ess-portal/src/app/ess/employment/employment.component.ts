@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SharedService } from 'src/app/shared.service';
   templateUrl: './employment.component.html',
   styleUrls: ['./employment.component.scss']
 })
-export class EmploymentComponent implements OnInit {
+export class EmploymentComponent implements OnInit,OnChanges {
 
   constructor( private service:SharedService) { }
   Active:string = ""
@@ -47,7 +47,41 @@ export class EmploymentComponent implements OnInit {
   ngOnInit(): void {
     this.Notassigned = "N/A"
     this.loadData()
+    this.updateData()
   }
+  ngOnChanges(): void{
+    this.updateData();
+  }
+  
+ updateData(){
+  var val= {
+    doeEth:this.doeEth,
+    doe:this.doe,
+    tinNo:this.tinNo,
+    pfPenNo:this.pfPenNo,
+    jobPosition:this.jobposition,
+    grade:this.grade,
+    scale:this.scale,
+    basicSalary:this.basicSalary,
+    deptL1:this.deptL1,
+    dutyStation:this.dutyStation,
+    empType:this.empType,
+    contStartDate:this.contStartDate,
+    contEndDateEth:this.contEndDateEth,
+    contEndDate:this.contEndDate,
+    fieldofStudy:this.fieldofstudy,
+    permanentSince:this.permanentSince,
+    alcStartDateEth:this.alscEth,
+    alcStartDate:this.alsc,
+    penPfSchem:this.pfScheme,
+    contStartDateEth:this.contStartDateEth
+  }
+  this.service.currentData.subscribe(message => this.pass = message)
+  this.service.update(val).subscribe(()=>{
+    alert("The Employee List has been updated")
+  })
+ }
+
 
   loadData(){
     this.service.currentData.subscribe(message => this.pass = message)

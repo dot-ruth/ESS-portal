@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            .header_info,.emp,.emp-info,.salary{
+                display: flex; 
+                justify-content: space-between; 
+                margin: .5rem .3rem;
+            }
+            .emp_,.budget,.nameDisplay,.dobDisplay{
+                display: flex;
+                width: 60%;
+                justify-content:space-between
+            }
+            .header_info,.emp{flex-direction: column; }
+            
+        </style>
+    </head>
+    <body>
+        
+    <div class="modal-con">
+<h2 mat-dialog-title >Employee's Personal Information</h2>
+<div class="header_info">
+    <div class="nameDisplay">
+    <div mat-dialog-content class="mat-typography"><strong>Full Name</strong> {{honorific}} {{name}}</div>
+    <div mat-dialog-content class="mat-typography"><strong>Id</strong> {{id}}</div>
+    </div><hr>
+<div class="dobDisplay">
+<div mat-dialog-content class="mat-typography"><strong>Sex</strong> {{sex}}</div>
+<div mat-dialog-content class="mat-typography"><strong>Date of Birth</strong> {{dob}}</div>
+<div mat-dialog-content class="mat-typography"><strong>Date of Birth(Eth) </strong> {{Notassigned}}</div>
+</div>
+</div><hr>
+<div class="emp-info">
+    <div class="emp">
+        <div mat-dialog-content class="mat-typography"><strong>Employee Type</strong> {{empType}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Staff Type</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Source of Fund</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Payment Base</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Profession Category</strong> {{fieldofstudy}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Duty Station</strong> {{dutyStation}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Emp.PF Cont.Rate</strong> {{Notassigned}}</div>
+    </div>
+
+    <div class="emp">
+        <div mat-dialog-content class="mat-typography"><strong>Date of Employment</strong> {{doe}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Contract Start</strong>{{contStartDate}} </div>
+        <div mat-dialog-content class="mat-typography"><strong>Contract End</strong>{{contEndDate}} </div>
+        <div mat-dialog-content class="mat-typography"><strong>Res.permit start</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Res.permit End</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>ALCS Date</strong> {{alsc}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Permanent since</strong> {{permanentSince}} </div>
+    </div>
+
+    <div class="emp">
+        <div mat-dialog-content class="mat-typography"><strong>Date of Employment(Eth)</strong> {{doeEth}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Contract Start(Eth)</strong>{{contStartDateEth}} </div>
+        <div mat-dialog-content class="mat-typography"><strong>Contract End(Eth)</strong>{{contEndDateEth}} </div>
+        <div mat-dialog-content class="mat-typography"><strong>Res.permit start(Eth)</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Res.permit End(Eth)</strong> {{Notassigned}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>ALCS Date(Eth)</strong> {{alscEth}}</div>
+        <div mat-dialog-content class="mat-typography"><strong>Permanent since(Eth)</strong> {{Notassigned}} </div>
+    </div> 
+
+    
+</div>
+<hr>
+<div class="emp_">
+    <div mat-dialog-content class="mat-typography"><strong>Pension/PF Scheme</strong> {{pfScheme}}</div>
+    <div mat-dialog-content class="mat-typography"><strong>Bouns Payment on</strong> {{Notassigned}} </div>
+</div> 
+<hr>
+<div class="budget">
+    <div mat-dialog-content class="mat-typography"><strong>Department</strong> {{deptL1}}</div>
+    <div mat-dialog-content class="mat-typography"><strong>Shift</strong> {{Notassigned}} </div>
+</div>
+<hr>
+<div class="salary">
+<div class="emp">
+    <div mat-dialog-content class="mat-typography"><strong>Job Position</strong> {{jobposition}}</div>
+    <div mat-dialog-content class="mat-typography"><strong>Grade</strong>{{grade}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>Scale</strong>{{scale}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>Basic Salary</strong> {{basicSalary}}</div>
+    <div mat-dialog-content class="mat-typography"><strong>Adjusted Salary</strong> {{Notassigned}}</div>
+    </div>
+    <div class="emp">
+    <div mat-dialog-content class="mat-typography"><strong>Reports To</strong> {{reportsTo}}</div>
+    <div mat-dialog-content class="mat-typography"><strong>Annual Leave Type</strong> {{Notassigned}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>Classification id No_</strong> {{Notassigned}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>Tin</strong> {{tinNo}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>PF/Pension Number</strong> {{pfPenNo}} </div>
+</div>
+<div class="emp">
+    <div mat-dialog-content class="mat-typography"><strong>Emp File Number</strong> {{Notassigned}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>Company id card number</strong> {{Notassigned}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>TA Clock in ID</strong> {{Notassigned}} </div>
+    <div mat-dialog-content class="mat-typography"><strong>TA Machine</strong> {{Notassigned}} </div>
+</div> 
+</div>
+<hr>
+
+</div>
+
+
+</body>
+</html>
