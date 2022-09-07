@@ -10,6 +10,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card'
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { CommonModule } from '@angular/common';  
 
 
@@ -24,6 +26,7 @@ import { EmploymentComponent } from './ess/employment/employment.component';
 import { HeaderComponent } from './ess/header/header.component';
 import { PersonalComponent } from './ess/personal/personal.component';
 import { TopButtonComponent } from './ess/top-button/top-button.component';
+import { UpdateComponent } from './ess/update/update.component';
 
 
 @NgModule({
@@ -35,8 +38,7 @@ import { TopButtonComponent } from './ess/top-button/top-button.component';
     HeaderComponent ,
     PersonalComponent,
     TopButtonComponent,
-    
-    
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,8 +58,11 @@ import { TopButtonComponent } from './ess/top-button/top-button.component';
     HttpClientModule,
     MatDialogModule,
     CommonModule,
+    MatCardModule,
+    MatSnackBarModule,
   ],
   providers: [SharedService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[UpdateComponent]
 })
 export class AppModule { }

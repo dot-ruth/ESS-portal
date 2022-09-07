@@ -139,11 +139,37 @@ namespace webAPI.Controllers
             }).ToArray().ToHashSet();
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<List<Emp>>> Updateemp(string id,Emp req)
         {
             var employee = await context.Emps.FindAsync(id);
             employee.FullName = req.FullName;
+            employee.ReportsTo = req.ReportsTo;
+            employee.Sex = req.Sex;
+            employee.Title = req.Title;
+            employee.Dob = req.Dob;
+            employee.DobEth = req.DobEth;
+            employee.Doe = req.Doe;
+            employee.DoeEth = req.DoeEth;
+            employee.TinNo = req.TinNo;
+            employee.PfPenNo = req.PfPenNo;
+            employee.JobPosition = req.JobPosition;
+            employee.Grade = req.Grade;
+            employee.Scale = req.Scale;
+            employee.BasicSalary = req.BasicSalary;
+            employee.DeptL1 = req.DeptL1;
+            employee.DutyStation = req.DutyStation;
+            employee.EmpType = req.EmpType;
+            employee.ContStartDate = req.ContStartDate;
+            employee.ContStartDateEth = req.ContStartDateEth;
+            employee.ContEndDate = req.ContEndDate;
+            employee.ContEndDateEth = req.ContEndDateEth;
+            employee.FieldOfStudy = req.FieldOfStudy;
+            employee.PermanentSince = req.PermanentSince;
+            employee.AlcStartDate = req.AlcStartDate;
+            employee.AlcStartDateEth = req.AlcStartDateEth;
+            employee.PenPfSchem = req.PenPfSchem;
+
             await context.SaveChangesAsync();
             return Ok(employee);
         }

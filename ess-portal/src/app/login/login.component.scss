@@ -1,10 +1,13 @@
+
+.cardcon{
+    width: 50%;
+    margin:5rem auto ;
+    background-color: rgba(139, 139, 193,.1);
+}
 .con{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 70%;
     margin:3rem auto ;
-    .btn{
-        width: 50%;
-        margin: 1rem auto;
-    }
+    
 }

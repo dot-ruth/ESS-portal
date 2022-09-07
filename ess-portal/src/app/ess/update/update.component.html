@@ -1,0 +1,238 @@
+
+  <h2>Update Your Information</h2>
+  <div class="con mat-app-background" >
+<form action="" >
+        
+            <div class="con-item" id="s">
+         <mat-form-field appearance="fill" class="emp" >
+            <mat-label>Full Name: </mat-label>
+            <input matInput [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+    </div>
+        <div class="con-item">
+        <mat-form-field appearance="fill">
+            <mat-label>Employee ID</mat-label>
+            <input matInput [value]="id" >
+          </mat-form-field>
+    </div>
+        <div class="con-item" id="f">
+         <mat-form-field appearance="fill" id="honor">
+            <mat-label> honorific:</mat-label>
+            <mat-select  [(value)]="honorific" [(ngModel)]="honorific" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let honor of honorificlist" [value]="honor.title">{{honor.title}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+          </div>
+        <div class="con-item">
+       <mat-form-field appearance="fill" >
+            <mat-label> Sex: </mat-label>
+            <mat-select [(ngModel)]="sex" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let sex of sexList" [value]="sex.sex">{{sex.sex}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+    </div>
+    <div class="con-item">
+       <mat-form-field  appearance="fill">
+            <mat-label> Date of Birth (Grg)</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="dob" [ngModelOptions]="{standalone: true}">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker ></mat-datepicker>
+        </mat-form-field>
+          
+    </div>
+        <div class="con-item">
+         <mat-form-field  appearance="fill">
+        <mat-label>Date of Birth (Eth)</mat-label>
+        <input matInput [matDatepicker]="pick"  [(ngModel)]="dobEth" [ngModelOptions]="{standalone: true}">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pick"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #pick></mat-datepicker>
+    </mat-form-field>
+    </div>
+
+    <div class="con-item">
+        <mat-form-field appearance="fill"  class="select">
+            <mat-label>Employment Type </mat-label>
+            <mat-select [(ngModel)]="empType" [ngModelOptions]="{standalone: true}">
+              <mat-option *ngFor="let emptype of emptypelist" [value]="emptype.empType">{{emptype.empType}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="con1-item">
+            <mat-form-field appearance="fill"class="select"  >
+              <mat-label>Profession Category</mat-label>
+              <mat-select [(ngModel)]="fieldofstudy" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let profession of professionlist" [value]="profession.fieldOfStudy">{{profession.fieldOfStudy}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="con1-item">
+            <mat-form-field appearance="fill" class="select" >
+              <mat-label>Duty Station</mat-label>
+              <mat-select [(ngModel)]="dutyStation" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let duty of dutylist" [value]="duty.dutyStation">{{duty.dutyStation}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="con2-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Date of Emp't (Grg)</mat-label>
+                 <input matInput [matDatepicker]="E" [(ngModel)]="doe" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="E"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #E></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con3-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Date of Emp't (Eth)</mat-label>
+                 <input matInput [(ngModel)]="doeEth" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="Ee"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #Ee></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con2-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Contract Start (Grg)</mat-label>
+                 <input matInput [matDatepicker]="C" [(ngModel)]="contStartDate" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="C"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #C></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con3-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Contract Start (Eth)</mat-label>
+                 <input matInput  [(ngModel)]="contStartDateEth" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="Ce"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #Ce></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con2-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Contract End(Grg)</mat-label>
+                 <input matInput [matDatepicker]="C_e" [(ngModel)]="contEndDate" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="C_e"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #C_e></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con3-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Contract End(Eth)</mat-label>
+                 <input matInput  [(ngModel)]="contEndDateEth" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="C_e_e"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #C_e_e></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con2-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> ALCS Date (Grg)</mat-label>
+                 <input matInput [matDatepicker]="a" [(ngModel)]="alsc" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="a"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #a></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con3-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> ALCS Date (Eth)</mat-label>
+                 <input matInput [(ngModel)]="alscEth" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="a_e"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #a_e></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="con2-item">
+            <mat-form-field  appearance="fill" class="select">
+                 <mat-label> Permanent Since (Grg)</mat-label>
+                 <input matInput [matDatepicker]="ps" [(ngModel)]="permanentSince" [ngModelOptions]="{standalone: true}">
+                 <mat-datepicker-toggle matSuffix [for]="ps"></mat-datepicker-toggle>
+                 <mat-datepicker touchUi #ps></mat-datepicker>
+             </mat-form-field>
+         </div>
+
+         <div class="flex1-item">
+            <mat-form-field  appearance="fill" class="select" id="pension">
+                 <mat-label> Pension/PF Scheme</mat-label>
+                 <input matInput [(ngModel)]="pfScheme"[ngModelOptions]="{standalone: true}">
+             </mat-form-field>
+         </div>
+
+         <div class="flex1-item">
+            <mat-form-field appearance="fill"  class="select">
+                <mat-label>Department</mat-label>
+                <mat-select [(ngModel)]="deptL1" [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let dept of deptlist" [value]="dept.deptL1">{{dept.deptL1}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+         </div>
+
+         <div class="flex1-item">
+            <mat-form-field appearance="fill"  class="select">
+                <mat-label>Job Position</mat-label>
+                <mat-select [(ngModel)]="jobposition" [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let job of jobPositionlist" [value]="job.jobPosition">{{job.jobPosition}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+         </div>
+
+         <div class="flex2-item">
+            <mat-form-field appearance="fill"  class="select">
+                <mat-label>Grade</mat-label>
+                <mat-select [(ngModel)]="grade" [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let grade of gradeList" [value]="grade.grade">{{grade.grade}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+         </div>
+
+         <div class="con_1">
+            <mat-form-field appearance="fill" class="emp">
+                <mat-label>Scale</mat-label>
+                <input matInput [(ngModel)]="scale" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+        </div>
+
+        <div class="con_2">
+            <mat-form-field appearance="fill" class="emp">
+                <mat-label>Basic Salary</mat-label>
+                <input matInput [(ngModel)]="basicSalary" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+        </div>
+
+        <div class="flex1-item">
+            <mat-form-field appearance="fill"  class="select">
+                <mat-label>Reports to</mat-label>
+                <mat-select [(ngModel)]="reportsTo" [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let reports of reportstoList" [value]="reports.reportsTo">{{reports.reportsTo}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+         </div>
+
+         <div class="con_2">
+            <mat-form-field appearance="fill" class="emp">
+                <mat-label>Tin</mat-label>
+                <input matInput [value]="tinNo">
+              </mat-form-field>
+        </div>
+
+        <div class="con_3">
+            <mat-form-field appearance="fill" class="emp">
+                <mat-label>Pension/PF Number</mat-label>
+                <input matInput [value]="pfPenNo">
+              </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" class="btn" (click)="updateData()">Update</button>
+    
+</form>
+</div>
+
+

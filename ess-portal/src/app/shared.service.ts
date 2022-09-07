@@ -16,6 +16,8 @@ export class SharedService {
   changeData(pass:string){
     this.Data.next(pass);
   }
+
+  
  
   getfullName():Observable<any[]>{
     return this.http.get<any[]>(this.APIurl + '/getfullName');
@@ -65,8 +67,8 @@ export class SharedService {
     return this.http.get<any[]>(this.APIurl + '/reportsto');
   }
 
-  update(val:any){
-    return this.http.put(this.APIurl,val);
+  update(id:string,val:any){
+    return this.http.put(this.APIurl + '/' + id,val);
   }
   
 }
