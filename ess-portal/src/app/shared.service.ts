@@ -10,6 +10,8 @@ export class SharedService {
   readonly APIurl = "https://localhost:7261/api/emp";
   private Data = new BehaviorSubject('');
   currentData = this.Data.asObservable();
+  private isupdated = new BehaviorSubject('');
+  updated = this.isupdated.asObservable();
 
   constructor(private http:HttpClient) { }
 

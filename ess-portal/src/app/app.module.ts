@@ -12,6 +12,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card'
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSidenavModule} from '@angular/material/sidenav'
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon'
 import { CommonModule } from '@angular/common';  
 
 
@@ -60,6 +63,9 @@ import { UpdateComponent } from './ess/update/update.component';
     CommonModule,
     MatCardModule,
     MatSnackBarModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatIconModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent],

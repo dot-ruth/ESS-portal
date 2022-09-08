@@ -1,4 +1,5 @@
-
+  <app-top-button></app-top-button>
+  <div class="whole_con">
   <h2>Update Your Information</h2>
   <div class="con mat-app-background" >
 <form action="" >
@@ -60,7 +61,7 @@
           </mat-form-field>
         </div>
 
-        <div class="con1-item">
+        <div class="con-item">
             <mat-form-field appearance="fill"class="select"  >
               <mat-label>Profession Category</mat-label>
               <mat-select [(ngModel)]="fieldofstudy" [ngModelOptions]="{standalone: true}">
@@ -69,7 +70,7 @@
             </mat-form-field>
           </div>
 
-          <div class="con1-item">
+          <div class="con-item">
             <mat-form-field appearance="fill" class="select" >
               <mat-label>Duty Station</mat-label>
               <mat-select [(ngModel)]="dutyStation" [ngModelOptions]="{standalone: true}">
@@ -78,7 +79,7 @@
             </mat-form-field>
           </div>
 
-          <div class="con2-item">
+          <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Date of Emp't (Grg)</mat-label>
                  <input matInput [matDatepicker]="E" [(ngModel)]="doe" [ngModelOptions]="{standalone: true}">
@@ -87,7 +88,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con3-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Date of Emp't (Eth)</mat-label>
                  <input matInput [(ngModel)]="doeEth" [ngModelOptions]="{standalone: true}">
@@ -96,7 +97,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con2-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Contract Start (Grg)</mat-label>
                  <input matInput [matDatepicker]="C" [(ngModel)]="contStartDate" [ngModelOptions]="{standalone: true}">
@@ -105,7 +106,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con3-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Contract Start (Eth)</mat-label>
                  <input matInput  [(ngModel)]="contStartDateEth" [ngModelOptions]="{standalone: true}">
@@ -114,7 +115,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con2-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Contract End(Grg)</mat-label>
                  <input matInput [matDatepicker]="C_e" [(ngModel)]="contEndDate" [ngModelOptions]="{standalone: true}">
@@ -123,7 +124,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con3-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Contract End(Eth)</mat-label>
                  <input matInput  [(ngModel)]="contEndDateEth" [ngModelOptions]="{standalone: true}">
@@ -132,7 +133,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con2-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> ALCS Date (Grg)</mat-label>
                  <input matInput [matDatepicker]="a" [(ngModel)]="alsc" [ngModelOptions]="{standalone: true}">
@@ -141,7 +142,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con3-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> ALCS Date (Eth)</mat-label>
                  <input matInput [(ngModel)]="alscEth" [ngModelOptions]="{standalone: true}">
@@ -150,7 +151,7 @@
              </mat-form-field>
          </div>
 
-         <div class="con2-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select">
                  <mat-label> Permanent Since (Grg)</mat-label>
                  <input matInput [matDatepicker]="ps" [(ngModel)]="permanentSince" [ngModelOptions]="{standalone: true}">
@@ -159,14 +160,14 @@
              </mat-form-field>
          </div>
 
-         <div class="flex1-item">
+         <div class="con-item">
             <mat-form-field  appearance="fill" class="select" id="pension">
                  <mat-label> Pension/PF Scheme</mat-label>
                  <input matInput [(ngModel)]="pfScheme"[ngModelOptions]="{standalone: true}">
              </mat-form-field>
          </div>
 
-         <div class="flex1-item">
+         <div class="con-item">
             <mat-form-field appearance="fill"  class="select">
                 <mat-label>Department</mat-label>
                 <mat-select [(ngModel)]="deptL1" [ngModelOptions]="{standalone: true}">
@@ -175,7 +176,7 @@
               </mat-form-field>
          </div>
 
-         <div class="flex1-item">
+         <div class="con-item">
             <mat-form-field appearance="fill"  class="select">
                 <mat-label>Job Position</mat-label>
                 <mat-select [(ngModel)]="jobposition" [ngModelOptions]="{standalone: true}">
@@ -184,7 +185,7 @@
               </mat-form-field>
          </div>
 
-         <div class="flex2-item">
+         <div class="con-item">
             <mat-form-field appearance="fill"  class="select">
                 <mat-label>Grade</mat-label>
                 <mat-select [(ngModel)]="grade" [ngModelOptions]="{standalone: true}">
@@ -193,21 +194,21 @@
               </mat-form-field>
          </div>
 
-         <div class="con_1">
+         <div class="con-item">
             <mat-form-field appearance="fill" class="emp">
                 <mat-label>Scale</mat-label>
                 <input matInput [(ngModel)]="scale" [ngModelOptions]="{standalone: true}">
               </mat-form-field>
         </div>
 
-        <div class="con_2">
+        <div class="con-item">
             <mat-form-field appearance="fill" class="emp">
                 <mat-label>Basic Salary</mat-label>
                 <input matInput [(ngModel)]="basicSalary" [ngModelOptions]="{standalone: true}">
               </mat-form-field>
         </div>
 
-        <div class="flex1-item">
+        <div class="con-item">
             <mat-form-field appearance="fill"  class="select">
                 <mat-label>Reports to</mat-label>
                 <mat-select [(ngModel)]="reportsTo" [ngModelOptions]="{standalone: true}">
@@ -216,23 +217,25 @@
               </mat-form-field>
          </div>
 
-         <div class="con_2">
-            <mat-form-field appearance="fill" class="emp">
+         <div class="con-item">
+            <mat-form-field  appearance="fill" class="emp">
                 <mat-label>Tin</mat-label>
-                <input matInput [value]="tinNo">
+                <input  matInput [value]="tinNo">
               </mat-form-field>
         </div>
 
-        <div class="con_3">
+        <div class="con-item">
             <mat-form-field appearance="fill" class="emp">
                 <mat-label>Pension/PF Number</mat-label>
                 <input matInput [value]="pfPenNo">
               </mat-form-field>
         </div>
-
+        <div class="btn_con">
         <button mat-raised-button color="primary" class="btn" (click)="updateData()">Update</button>
-    
+        <button mat-raised-button color="primary" class="btn" (click)="goback()">Go Back to Home Page</button>
+      </div>
 </form>
+</div>
 </div>
 
 

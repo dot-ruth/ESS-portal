@@ -1,5 +1,23 @@
 *{width: 100%;}
+.whole_con{
+    background-color: rgba(139, 139, 193,.2);  
+}
+h2{
+    text-align: center;
+}
+.btn_con{
+    display: flex;
+    justify-content: space-around;
 .btn{
     width: 30%;
-    margin: .3rem 30%;
+    margin-bottom: 2rem;
+}
+}
+.con{
+    width: 70%;
+    margin: .3rem auto;
+    background-color: rgba(139, 139, 193,.1);
+    .con-item{
+        width: 100%;
+    }
 }

@@ -1,6 +1,16 @@
 <div class="con">
-    <button mat-raised-button color="primary" class="btn" (click)="openUpdate()">Update Information</button>
-    <button mat-raised-button color="primary" class="btn"  (click)="openPreview()">Print Preview</button>
-    <button mat-raised-button color="primary" class="btn"(click)="refresh()">Refresh</button>
-    <button mat-raised-button color="primary" class="btn">Show Photo</button>
-    </div>
+<mat-icon mat-button [matMenuTriggerFor]="menu" class="icons"><span class="material-symbols-outlined">
+    menu
+    </span></mat-icon>
+    <mat-icon (click)="goback()" class="icons"><span class="material-symbols-outlined">
+        home
+        </span></mat-icon>
+<mat-menu #menu="matMenu"> 
+  <button mat-menu-item (click)="openUpdate()">Update Information</button>
+  <button mat-menu-item (click)="openPreview()">Print Preview</button>
+  <button mat-menu-item (click)="refresh()">Log Out</button>
+</mat-menu>
+</div>
+
+
+

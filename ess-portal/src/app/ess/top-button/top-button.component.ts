@@ -12,8 +12,9 @@ import { Router } from '@angular/router';
   templateUrl: './top-button.component.html',
   styleUrls: ['./top-button.component.scss']
 })
-export class TopButtonComponent {
-  constructor(public dialog:MatDialog,private router:Router){}
+export class TopButtonComponent { 
+
+  constructor(public dialog:MatDialog,private router:Router,private service:SharedService){}
 
   openPreview(){
     this.dialog.open(PreviewComponent,{
@@ -23,11 +24,16 @@ export class TopButtonComponent {
   }
 
   refresh(){
-    this.router.navigate(['/Login'])
+      window.location.reload();
   }
 
   openUpdate(){
     this.router.navigate(['/Updateinformation'])
+  }
+
+  goback()
+  {
+    this.router.navigate(['/ESS-Portal'])
   }
   
 

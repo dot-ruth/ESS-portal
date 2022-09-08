@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor(private service:SharedService,private snackbar:MatSnackBar){}
+  constructor(private service:SharedService,private snackbar:MatSnackBar,private router:Router){}
   datalist:any = []
   pass:string = ""
   name:string = ""
@@ -42,6 +43,7 @@ export class UpdateComponent implements OnInit {
   contEndDateEth:string = ""
 
   isupdated:boolean=false;
+  @Output() updated = new EventEmitter<boolean>();
   honorificlist:any = []
   sexList : any =[]
   emptypelist:any = []
@@ -153,13 +155,18 @@ ngOnInit(): void {
   this.snackbar.open("Are you Sure you want to update your personal informtion","Okay").onAction().subscribe(()=>{
     
     this.service.update(this.pass,val).subscribe(()=>{
-      this.snackbar.open("Your personal information  has been updated,please refresh the page and login to see the updated data","",{duration:5000})
+      this.snackbar.open("Your personal information  has been updated","",{duration:2000})
       this.loadData();
       this.isupdated = true;
+      this.updated.emit(this.isupdated);
     })
   })
   
  
  }
 
+ goback()
+{
+  this.router.navigate(['/ESS-Portal'])
+}
 }

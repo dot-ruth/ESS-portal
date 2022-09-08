@@ -1,6 +1,6 @@
-<app-top-button></app-top-button>
-<app-header></app-header> 
+<app-top-button (updated)="onUpdate($any($event))" ></app-top-button>
+<app-header (updated)="onUpdate($any($event))" ></app-header> 
 <mat-tab-group>
-  <mat-tab label="Employment"><app-employment></app-employment></mat-tab>
-  <mat-tab label="Personal"> <app-personal></app-personal> </mat-tab>
+  <mat-tab label="Employment"><app-employment (updated)="onUpdate($any($event))"></app-employment></mat-tab>
+  <mat-tab label="Personal"> <app-personal (updated)="onUpdate($any($event))"></app-personal> </mat-tab>
   </mat-tab-group>
