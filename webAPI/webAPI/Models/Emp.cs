@@ -55,5 +55,7 @@ namespace webAPI.Models
         public string? CacellNo { get; set; }
         public string? SubLedger { get; set; }
         public string? ContStartDateEth { get; set; }
+      //  public Address? Personaladdress { get; set; }
+
     }
 }

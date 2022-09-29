@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using webAPI.Models;
 
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddIdentity<user, IdentityRole>()
+    .AddEntityFrameworkStores<ESS_DBContext>();
 
 builder.Services.AddDbContext<ESS_DBContext>(options =>
 {

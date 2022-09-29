@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webAPI.Models;
 
@@ -11,9 +12,10 @@ using webAPI.Models;
 namespace webAPI.Migrations
 {
     [DbContext(typeof(ESS_DBContext))]
-    partial class ESS_DBContextModelSnapshot : ModelSnapshot
+    [Migration("20220929090550_IdentityTablesCreation")]
+    partial class IdentityTablesCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

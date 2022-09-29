@@ -1,8 +1,8 @@
 ﻿using FluentNHibernate.Automapping;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using webAPI.Migrations;
 using webAPI.Models;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
@@ -22,7 +22,15 @@ namespace webAPI.Controllers
             this.env = _environment;
         }
 
-        
+        [HttpPost]
+        public async Task<ActionResult<List<Emp>>> addEmployee(Emp req)
+        { 
+            context.Emps.Add(req);
+            await context.SaveChangesAsync();
+            return Ok("Employee Added");
+
+        }
+
         [HttpGet("{id}")]
         public dynamic getsingleData(string id)
         {
@@ -169,10 +177,20 @@ namespace webAPI.Controllers
             employee.AlcStartDate = req.AlcStartDate;
             employee.AlcStartDateEth = req.AlcStartDateEth;
             employee.PenPfSchem = req.PenPfSchem;
-
             await context.SaveChangesAsync();
             return Ok(employee);
         }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<List<Emp>>> deleteEmp(string id)
+        {
+            var employee = await context.Emps.FindAsync(id);
+            context.Emps.Remove(employee);
+            await context.SaveChangesAsync();
+
+            return Ok("Employee Deleted");
+
+        }
+
 
 
     }

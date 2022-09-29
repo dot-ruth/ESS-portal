@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace webAPI.Models
 {
-    public partial class ESS_DBContext : DbContext
+    public partial class ESS_DBContext : IdentityDbContext<user>
     {
         public ESS_DBContext()
         {
         }
 
-        public ESS_DBContext(DbContextOptions<ESS_DBContext> options)
+        public ESS_DBContext(DbContextOptions options)
             : base(options)
         {
         }
@@ -22,13 +23,14 @@ namespace webAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=.;Database=ESS_DB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Emp>(entity =>
             {
                 //entity.HasNoKey();
