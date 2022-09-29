@@ -1,0 +1,32 @@
+
+<body>
+    <mat-card class="cardcon">
+        <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
+        <div class="con">
+        <mat-form-field appearance="fill" >
+            <mat-label>Full Name</mat-label>
+            <input matInput type="text" id="fullName" formControlName="fullName" class="form-control" >
+            <div >
+                <em *ngIf="validateControl('fullName') && hasError('fullName', 'required')">Full Name is required</em>
+            </div>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Password</mat-label>
+            <input type="password" matInput id="password" formControlName="password" class="form-control">
+            <div>
+                <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+            </div>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" matInputid="confirm" formControlName="confirm" class="form-control" >
+        </mat-form-field>
+        <button mat-raised-button color="primary"  class="btn" [disabled]="!registerForm.valid">Register</button>
+    </div>
+    </form>
+    </mat-card>
+    </body>
+  
+    
+    
+    

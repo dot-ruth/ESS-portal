@@ -30,6 +30,8 @@ import { HeaderComponent } from './ess/header/header.component';
 import { PersonalComponent } from './ess/personal/personal.component';
 import { TopButtonComponent } from './ess/top-button/top-button.component';
 import { UpdateComponent } from './ess/update/update.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { UpdateComponent } from './ess/update/update.component';
     PersonalComponent,
     TopButtonComponent,
     UpdateComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

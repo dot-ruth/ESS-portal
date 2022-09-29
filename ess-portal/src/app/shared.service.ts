@@ -19,8 +19,6 @@ export class SharedService {
     this.Data.next(pass);
   }
 
-  
- 
   getfullName():Observable<any[]>{
     return this.http.get<any[]>(this.APIurl + '/getfullName');
   }

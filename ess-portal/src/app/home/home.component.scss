@@ -1,0 +1,18 @@
+body{
+    overflow-y: hidden;
+    background-color: rgba(139, 139, 193,.3)
+}
+.cardcon{
+    width: 50%;
+    margin:5rem auto ;
+    background-color: rgba(139, 139, 193,.1);
+    h2{
+        margin: 3rem 7rem;
+    }
+}
+.con{
+    display: flex;
+    justify-content: end;
+    width: 70%;
+    margin:3rem auto ;  
+}
