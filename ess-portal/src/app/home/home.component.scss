@@ -12,7 +12,11 @@ body{
 }
 .con{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     width: 70%;
     margin:3rem auto ;  
+    .con-item{
+        margin-left: 1rem;
+        font-weight: bold;
+    }
 }

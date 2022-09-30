@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class SharedService {
   readonly APIurl = "https://localhost:7261/api/emp";
+  readonly APIurl1 = "https://localhost:7261/api/Accounts/Registration";
   private Data = new BehaviorSubject('');
   currentData = this.Data.asObservable();
   private isupdated = new BehaviorSubject('');
@@ -69,6 +70,10 @@ export class SharedService {
 
   update(id:string,val:any){
     return this.http.put(this.APIurl + '/' + id,val);
+  }
+
+  register(val:any){
+    return this.http.put(this.APIurl1,val);
   }
   
 }

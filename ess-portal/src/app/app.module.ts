@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon'
 import { CommonModule } from '@angular/common';  
+import { AuthenticationModule } from './authentication/authentication.module';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -69,6 +70,7 @@ import { HomeComponent } from './home/home.component';
     MatSidenavModule,
     MatMenuModule,
     MatIconModule,
+    AuthenticationModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent],

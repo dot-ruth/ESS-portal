@@ -12,7 +12,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient,private envUrl: EnvironmentUrlService) { }
 
   public registerUser = (route: string, body: UserForRegistrationDto) => {
-    return this.http.post<RegistrationResponseDto> (this.createCompleteRoute(route, this.envUrl.urlAddress), body);
+    return this.http.post<RegistrationResponseDto> (route, body);
   }
 
   private createCompleteRoute = (route: string, envAddress: string) => {

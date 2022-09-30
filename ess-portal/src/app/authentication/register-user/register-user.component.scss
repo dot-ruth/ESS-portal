@@ -1,9 +1,20 @@
 body{
+    background-color: rgba(139, 139, 193,.3);
     overflow-y: hidden;
 }
+.con1{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin:1rem auto ;  
+    .con1-item{
+        font-weight: bold;
+    }
+}
+
 .cardcon{
     width: 50%;
-    margin:5rem auto ;
+    margin:auto ;
     background-color: rgba(139, 139, 193,.1);
 }
 .con{
@@ -11,4 +22,7 @@ body{
     flex-direction: column;
     width: 70%;
     margin:3rem auto ;  
+}
+em{
+    color: #e71515;
 }

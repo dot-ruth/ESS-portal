@@ -1,27 +1,38 @@
 
 <body>
+    <div class="con1">
+        <span class="con1-item" (click)="openlogin()">
+            Login
+             </span>
+                 </div>
     <mat-card class="cardcon">
         <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
         <div class="con">
         <mat-form-field appearance="fill" >
             <mat-label>Full Name</mat-label>
-            <input matInput type="text" id="fullName" formControlName="fullName" class="form-control" >
-            <div >
-                <em *ngIf="validateControl('fullName') && hasError('fullName', 'required')">Full Name is required</em>
+            <input matInput type="text" formControlName="fullname" required>
+            <div ><small>
+                <em *ngIf="validateControl('fullname') && hasError('fullname', 'required')">Full Name is required</em>
+            </small>
             </div>
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Password</mat-label>
-            <input type="password" matInput id="password" formControlName="password" class="form-control">
-            <div>
+            <input type="password" matInput formControlName="password" required>
+            <div><small>
                 <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+            </small>
             </div>
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Confirm Password</mat-label>
-            <input type="password" matInputid="confirm" formControlName="confirm" class="form-control" >
+            <input type="password" matInput formControlName="confirm" required >
+            <div><small>
+                <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">You will have to Confirm Your Password</em>
+            </small>
+            </div>
         </mat-form-field>
-        <button mat-raised-button color="primary"  class="btn" [disabled]="!registerForm.valid">Register</button>
+       <button mat-raised-button color="primary"  class="btn" [disabled]="!registerForm.valid">Register</button>
     </div>
     </form>
     </mat-card>

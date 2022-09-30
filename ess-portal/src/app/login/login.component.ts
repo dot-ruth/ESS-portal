@@ -40,7 +40,9 @@ export class LoginComponent implements OnInit {
   }
 
   
-    
+  openregister(){
+    this.router.navigate(['/Register'])
+  }  
    
 
 
