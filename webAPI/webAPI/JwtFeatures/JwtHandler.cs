@@ -20,7 +20,7 @@ namespace webAPI.JwtFeatures
 
             public SigningCredentials GetSigningCredentials()
             {
-                var key = Encoding.UTF8.GetBytes(_jwtSettings.GetSection("securityKey").Value);
+                var key = Encoding.UTF8.GetBytes("this is my custom Secret key for authentication");
                 var secret = new SymmetricSecurityKey(key);
 
                 return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
@@ -30,7 +30,7 @@ namespace webAPI.JwtFeatures
             {
                 var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, user.Email)
+            new Claim(ClaimTypes.Name, user.UserName)
         };
 
                 return claims;

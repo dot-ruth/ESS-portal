@@ -41,9 +41,7 @@ import {MatIconModule} from '@angular/material/icon'
     MatSidenavModule,
     MatMenuModule,
     MatIconModule,
-    /*RouterModule.forChild([
-      {path: 'register',component:RegisterUserComponent},
-    ])*/
+    
   ]
 })
 export class AuthenticationModule { }

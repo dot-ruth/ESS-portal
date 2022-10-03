@@ -3,6 +3,8 @@ import { RegistrationResponseDto } from '../../_interface/response/registration-
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { EnvironmentUrlService } from './environment-url.service';
+import { UserForAuthenticationDto } from 'src/app/_interface/user/user-for-authentication-dto';
+import { AuthResponseDto } from 'src/app/_interface/response/auth-response-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +19,9 @@ export class AuthenticationService {
 
   private createCompleteRoute = (route: string, envAddress: string) => {
     return `${envAddress}/${route}`;
+  }
+
+  public loginUser = (route: string, body: UserForAuthenticationDto) => {
+    return this.http.post<AuthResponseDto>(this.createCompleteRoute(route, this.envUrl.urlAddress), body);
   }
 }
