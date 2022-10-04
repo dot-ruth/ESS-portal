@@ -5,36 +5,23 @@
              </span>
                  </div>
 <mat-card class="cardcon">
-<form (ngSubmit)="loginUser(loginForm.value)" autocomplete="off" novalidate [formGroup]="loginForm">
+<form action="" #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
     <div class="con">
-        
     <mat-form-field appearance="fill" >
         <mat-label>User Name</mat-label>
-        <input matInput formControlName="username"  required>
-        <div><small>
-            <em *ngIf="validateControl('username') && hasError('username', 'required')">user name is required</em>
-        </small>
-        </div>
+        <input matInput [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <mat-form-field appearance="fill" >
         <mat-label>Password</mat-label>
-        <input type="password"  formControlName="password"  matInput >
-        <div><small>
-            <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
-        </small>
-        </div>
+        <input type="password" matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <mat-form-field appearance="fill" >
-        <mat-label>Your Id</mat-label>
-        <input matInput type="text" formControlName="ID" required>
-        <div><small>
-            <em *ngIf="validateControl('ID') && hasError('ID', 'required')">ID is required</em>
-        </small>
-        </div>
+        <mat-label>Your ID</mat-label>
+        <input matInput [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-    <button mat-raised-button color="primary"  class="btn" [disabled]="!loginForm.valid">Login</button>
+    <div *ngIf="err" class="em">Please Check the entered Credintials</div>
+    <button mat-raised-button color="primary"  class="btn">Login</button>
 </div>
 </form>
 </mat-card>
 </body>
-

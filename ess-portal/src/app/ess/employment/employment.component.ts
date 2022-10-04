@@ -46,8 +46,7 @@ export class EmploymentComponent implements OnInit {
 
   ngOnInit(): void {
     this.Notassigned = "N/A"
-    this.loadData()
-    
+    this.loadData() 
   }
 
   loadData(){

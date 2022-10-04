@@ -10,6 +10,9 @@ body{
     .con1-item{
         font-weight: bold;
     }
+    .con1-item:hover{
+        cursor: pointer;
+    }
 }
 
 .cardcon{

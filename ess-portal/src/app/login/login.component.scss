@@ -11,6 +11,9 @@ body{
     .con1-item{
         font-weight: bold;
     }
+    .con1-item:hover{
+        cursor: pointer;
+    }
 }
 
 .cardcon{
@@ -24,6 +27,6 @@ body{
     width: 70%;
     margin:3rem auto ;  
 }
-em{
+.em{
     color: #e71515;
 }

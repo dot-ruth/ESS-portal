@@ -13,72 +13,60 @@ import { UserForAuthenticationDto } from '../_interface/user/user-for-authentica
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  
 
+  constructor(private authService: AuthenticationService, private router: Router,private service:SharedService) { }
   
-  loginForm!: FormGroup;
-  errorMessage: string = '';
-  showError: boolean = false;
-  constructor(private authService: AuthenticationService, private router: Router, private route: ActivatedRoute,private service:SharedService) { }
-  
-  fullname:string = "";
-  ID:string = "";
+  username:string = "";
+  password:string = "";
+  pass:string = "";
   nav:boolean = false;
-  datalist:any = [];
+  err:boolean =false;
   logged:boolean = false;
-  ngOnInit(): void { 
-    this.service.currentData.subscribe(message => this.ID = message)
-    this.loginForm = new FormGroup({
-      username: new FormControl("", [Validators.required]),
-      password: new FormControl("", [Validators.required])
-    })
-  }
-    validateControl = (controlName: string) => {
-      return this.loginForm.get(controlName)?.invalid && this.loginForm.get(controlName)?.touched
-    }
-    hasError = (controlName: string, errorName: string) => {
-      return this.loginForm.get(controlName)?.hasError(errorName)
-    }
-    loginUser = (loginFormValue: any) => {
-      this.showError = false;
-      const login = {... loginFormValue };
-      const userForAuth: UserForAuthenticationDto = {
-        username: login.username,
-        password: login.password
-      }
-      this.authService.loginUser('https://localhost:7261/api/Accounts/Login', userForAuth)
-      .subscribe({
-        next: (res:AuthResponseDto) => {
-         localStorage.setItem("token", res.token);
-         this.logged=true;
-      },
-      error: (err: HttpErrorResponse) => {
-        this.errorMessage = err.message;
-        this.showError = true;
-      }})
-      this.service.getName(this.ID).subscribe((data: any)=>{
-        this.datalist = data;
-        this.nav=(this.ID == this.datalist[0].employeeId)
-      })
-      if(this.nav && this.logged) this.router.navigateByUrl('/ESS-Portal');
-      this.newData()
-      }
+  datalist:any = [];
   
+  ngOnInit(): void { 
+    this.service.currentData.subscribe(message => this.pass = message)
+    console.log(this.pass)
+  }
+
+  onSubmit(form:NgForm){
+    const userForAuth: UserForAuthenticationDto = {
+      username: this.username,
+      password: this.password
+    }
+    this.service.getName(this.pass).subscribe((data)=>{
+      this.datalist = data;
+      this.nav=( this.pass == this.datalist[0].employeeId)
+    })
+    this.authService.loginUser('https://localhost:7261/api/Accounts/Login',userForAuth)
+    .subscribe({
+      next: (res:AuthResponseDto) => {
+       localStorage.setItem("token", res.token);
+       this.logged=true;
+       if(this.nav && this.logged) this.router.navigateByUrl('/ESS-Portal');
+       else this.err = true;
+    }})
+    
+    this.newData()
+  }
+
+
+   
+    
+newData() {
+  this.service.changeData(this.pass)
+}
+
       loadData(){
-        this.service.getName(this.ID).subscribe((data: any)=>{
+        this.service.getName(this.pass).subscribe((data: any)=>{
           this.datalist = data;
         })
       }
-
+            
       openregister(){
         this.router.navigate(['/Register'])
       }  
       
-      newData() {
-        this.service.changeData(this.ID);
-      
-    }
   
 }
 

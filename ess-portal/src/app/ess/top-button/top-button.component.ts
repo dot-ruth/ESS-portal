@@ -23,7 +23,10 @@ export class TopButtonComponent {
     })
   }
 
-  refresh(){
+  logout(){
+      localStorage.removeItem("token");
+      //this.sendAuthStateChangeNotification(false);
+    
       window.location.reload();
   }
 
