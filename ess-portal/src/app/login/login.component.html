@@ -7,18 +7,15 @@
 <mat-card class="cardcon">
 <form action="" #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
     <div class="con">
-    <mat-form-field appearance="fill" >
-        <mat-label>User Name</mat-label>
-        <input matInput [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Your ID</mat-label>
+            <input matInput [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
     <mat-form-field appearance="fill" >
         <mat-label>Password</mat-label>
         <input type="password" matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-    <mat-form-field appearance="fill" >
-        <mat-label>Your ID</mat-label>
-        <input matInput [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
+    
     <div *ngIf="err" class="em">Please Check the entered Credintials</div>
     <button mat-raised-button color="primary"  class="btn">Login</button>
 </div>

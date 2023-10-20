@@ -7,8 +7,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIurl = "https://localhost:7261/api/emp";
-  readonly APIurl1 = "https://localhost:7261/api/Accounts/Registration";
+  readonly APIurl = "http://localhost:7261/api/emp";
+  readonly APIurl1 = "http://localhost:7261/api/Accounts/Registration";
   private Data = new BehaviorSubject('');
   currentData = this.Data.asObservable();
   private isupdated = new BehaviorSubject('');

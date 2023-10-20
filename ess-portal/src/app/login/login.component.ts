@@ -31,14 +31,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form:NgForm){
     const userForAuth: UserForAuthenticationDto = {
-      username: this.username,
+      username: this.pass,
       password: this.password
     }
+    console.log(this.pass)
     this.service.getName(this.pass).subscribe((data)=>{
       this.datalist = data;
       this.nav=( this.pass == this.datalist[0].employeeId)
     })
-    this.authService.loginUser('https://localhost:7261/api/Accounts/Login',userForAuth)
+    this.authService.loginUser('http://localhost:7261/api/Accounts/Login',userForAuth)
     .subscribe({
       next: (res:AuthResponseDto) => {
        localStorage.setItem("token", res.token);
